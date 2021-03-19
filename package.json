@@ -1,0 +1,15 @@
+{
+    "name": "npm-workflow",
+    "version": "0.1.0",
+    "description": "`npm` 工作流",
+    "main": "index.js",
+    "scripts": {
+        "eslint": "eslint *.js"
+    },
+    "keywords": [],
+    "author": "zhuang chen <suchenxiaoyu@qq.com>",
+    "license": "MIT",
+    "devDependencies": {
+        "eslint": "^7.22.0"
+    }
+}
