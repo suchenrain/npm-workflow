@@ -14,7 +14,7 @@
         "test": "mocha tests/",
         "precover": "rm -rf coverage",
         "cover": "nyc --reporter=html npm test",
-        "postcover": "rm -rf .nyc_output && opn-cli coverage/index.html"
+        "postcover": "rm -rf .nyc_output && npx open-cli coverage/index.html"
     },
     "keywords": [],
     "author": "zhuang chen <suchenxiaoyu@qq.com>",
