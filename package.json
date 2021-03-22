@@ -3,6 +3,9 @@
     "version": "0.1.0",
     "description": "`npm` 工作流",
     "main": "index.js",
+    "config": {
+        "port": 3000
+    },
     "scripts": {
         "lint": "npm-run-all --parallel lint:*",
         "lint:js": "eslint *.js",
@@ -12,9 +15,12 @@
         "lint:markdown": "markdownlint --config .markdownlint.json *.md",
         "pretest": "npm run lint",
         "test": "mocha tests/",
-        "precover": "rm -rf coverage",
         "cover": "nyc --reporter=html npm test",
-        "postcover": "rm -rf .nyc_output && npx open-cli coverage/index.html"
+        "cover:cleanup": "rm -rf coverage && rm -rf .nyc_output",
+        "cover:archive": "mkdir -p coverage_archive/$npm_package_version && cp -r coverage/* coverage_archive/$npm_package_version",
+        "cover:serve":"http-server coverage_archive/$npm_package_version -p $npm_package_config_port",
+        "cover:open":"npx open-cli http://localhost:$npm_package_config_port",
+        "postcover": "npm-run-all cover:archive cover:cleanup --parallel cover:serve cover:open"
     },
     "keywords": [],
     "author": "zhuang chen <suchenxiaoyu@qq.com>",
@@ -22,6 +28,7 @@
     "devDependencies": {
         "chai": "^4.3.4",
         "eslint": "^7.22.0",
+        "http-server": "^0.12.3",
         "jsonlint": "^1.6.3",
         "markdownlint-cli": "^0.27.1",
         "mocha": "^8.3.2",
