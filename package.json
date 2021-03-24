@@ -1,6 +1,6 @@
 {
     "name": "npm-workflow",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "description": "`npm` 工作流",
     "main": "index.js",
     "config": {
