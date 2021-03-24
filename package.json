@@ -23,7 +23,8 @@
         "cover:open": "scripty",
         "client": "npm-run-all --parallel client:*",
         "client:reload-server": "livereload client/",
-        "client:static-server": "http-server client/"
+        "client:static-server": "http-server client/",
+        "prepare": "husky install"
     },
     "keywords": [],
     "author": "zhuang chen <suchenxiaoyu@qq.com>",
@@ -33,7 +34,9 @@
         "chalk": "^4.1.0",
         "eslint": "^7.22.0",
         "http-server": "^0.12.3",
+        "husky": "^5.2.0",
         "jsonlint": "^1.6.3",
+        "lint-staged": "^10.5.4",
         "livereload": "^0.9.3",
         "markdownlint-cli": "^0.27.1",
         "mocha": "^8.3.2",
