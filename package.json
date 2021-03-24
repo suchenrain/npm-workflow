@@ -7,6 +7,9 @@
         "port": 3000
     },
     "scripts": {
+        "release:patch": "npm version patch && git push --set-upstream origin && git push --tags",
+        "release:minor": "npm version minor && git push --set-upstream origin && git push --tags",
+        "release:major": "npm version major && git push --set-upstream origin && git push --tags",
         "lint": "npm-run-all --parallel lint:*",
         "lint:js": "eslint *.js",
         "lint:js:fix": "npm run lint:js -- --fix",
