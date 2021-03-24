@@ -24,7 +24,13 @@
         "client": "npm-run-all --parallel client:*",
         "client:reload-server": "livereload client/",
         "client:static-server": "http-server client/",
-        "prepare": "husky install"
+        "prepare": "husky install",
+        "prebuild": "rm -rf dist && bash -c \"mkdir -p dist/{images,styles,scripts}\"",
+        "build": "scripty",
+        "build:images": "scripty",
+        "build:styles": "scripty",
+        "build:scripts": "scripty",
+        "build:hash": "scripty"
     },
     "lint-staged": {
         "*.js": "eslint",
@@ -39,10 +45,14 @@
     "devDependencies": {
         "chai": "^4.3.4",
         "chalk": "^4.1.0",
+        "cssmin": "^0.4.3",
         "eslint": "^7.22.0",
+        "hashmark": "^5.0.0",
         "http-server": "^0.12.3",
         "husky": "^5.2.0",
+        "imagemin-cli": "^6.0.0",
         "jsonlint": "^1.6.3",
+        "less": "^4.1.1",
         "lint-staged": "^10.5.4",
         "livereload": "^0.9.3",
         "markdownlint-cli": "^0.27.1",
@@ -51,10 +61,12 @@
         "nyc": "^15.1.0",
         "onchange": "^7.1.0",
         "opn-cli": "^5.0.0",
+        "replaceinfiles": "^1.1.4",
         "scripty": "^2.0.0",
         "shelljs": "^0.8.4",
         "stylelint": "^13.12.0",
-        "stylelint-config-standard": "^21.0.0"
+        "stylelint-config-standard": "^21.0.0",
+        "uglify-es": "^3.3.9"
     },
     "nyc": {
         "exclude": [
