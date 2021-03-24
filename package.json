@@ -7,6 +7,9 @@
         "port": 3000
     },
     "scripts": {
+        "logs": "tail -f logs/*",
+        "predeploy": "yarn && npm run build",
+        "deploy": "pm2 restart ecosystem.config.js",
         "bump": "scripty",
         "release:patch": "npm version patch && git push --set-upstream origin && git push --tags",
         "release:minor": "npm version minor && git push --set-upstream origin && git push --tags",
@@ -67,6 +70,7 @@
         "nyc": "^15.1.0",
         "onchange": "^7.1.0",
         "opn-cli": "^5.0.0",
+        "pm2": "^4.5.5",
         "replaceinfiles": "^1.1.4",
         "scripty": "^2.0.0",
         "shelljs": "^0.8.4",
