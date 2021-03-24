@@ -26,6 +26,13 @@
         "client:static-server": "http-server client/",
         "prepare": "husky install"
     },
+    "lint-staged": {
+        "*.js": "eslint",
+        "*.less": "stylelint",
+        "*.css": "stylelint",
+        "*.json": "jsonlint --quiet",
+        "*.md": "markdownlint --config .markdownlint.json"
+    },
     "keywords": [],
     "author": "zhuang chen <suchenxiaoyu@qq.com>",
     "license": "MIT",
