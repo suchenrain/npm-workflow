@@ -1,2 +1,7 @@
 node_modules
 *.lock
+coverage
+coverage_archive
+dist
+*.log
+logs
